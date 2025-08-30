@@ -6,6 +6,7 @@
   <title>Billions — Real vs Fake Swipe</title>
   <meta name="description" content="Swipe right for Real (human), left for Fake — Billions mini game."/>
   <link rel="stylesheet" href="styles.css"/>
+  <!-- performance hints -->
   <link rel="preconnect" href="https://images.weserv.nl" crossorigin>
   <link rel="dns-prefetch" href="https://images.weserv.nl">
   <link rel="preconnect" href="https://unavatar.io" crossorigin>
@@ -16,7 +17,8 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <img src="assets/billions-logo.png" alt="Billions" class="logo"/>
+      <!-- header logosu -->
+      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo"/>
       <span>Billions — Real vs Fake Swipe</span>
     </div>
     <div class="spacer"></div>
@@ -24,16 +26,21 @@
 
   <!-- START -->
   <section id="screen-start" class="screen active">
+    <!-- sol-üst köşe logosu (sabit) -->
+    <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="corner-logo">
     <div class="centerbox">
-      <img src="assets/billions-logo.png" alt="Billions" class="logo hero"/>
+      <!-- girişte büyük logo -->
+      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo hero"/>
       <h1>Real vs Fake Swipe</h1>
+
       <label for="nickname" class="label">Nickname</label>
       <input id="nickname" class="input" placeholder="Enter your nickname"/>
+
       <div class="row">
         <button id="startBtn" class="btn primary">Start</button>
-        <button id="diagBtn" class="btn">Diagnostics</button>
-        <button id="demoBtn" class="btn">Run Demo</button>
+        <!-- Diagnostics / Run Demo girişten kaldırıldı -->
       </div>
+
       <div id="errorBox" class="muted small" style="display:none;margin-top:8px;"></div>
     </div>
   </section>
@@ -64,7 +71,7 @@
   <!-- END -->
   <section id="screen-end" class="screen">
     <div class="centerbox">
-      <img src="assets/billions-logo.png" alt="Billions" class="logo hero smallgap"/>
+      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo hero smallgap"/>
       <h2>Game Over</h2>
       <p><b id="finalName">Player</b>, your score is <b id="finalScore">0</b> with <b id="accuracy">0%</b> accuracy.</p>
       <a id="shareX" class="btn" target="_blank" rel="noopener">Share on X</a>
@@ -76,7 +83,10 @@
   <script src="share.js"></script>
   <script src="main.js"></script>
   <script>
-    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+    // SW kaydı (relative path)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    }
   </script>
 </body>
 </html>
