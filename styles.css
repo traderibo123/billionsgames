@@ -1,62 +1,55 @@
 *{box-sizing:border-box}
 :root{
-  /* Billions logosundaki mavi tonlar */
-  --b-blue:#005DFF;         /* ana */
-  --b-blue-dark:#003B9E;    /* alt gölge */
-  --panel:#0f1218;--card:#121624;--muted:#283044;
-  --accent:#7bc7ff;--ok:#46d48c;--bad:#ff6b6b;
-  --text:#ffffff;--text-dim:#d6e3ff;--glow:rgba(123,199,255,.35)
+  --b-blue:#005DFF; --b-blue-dark:#003B9E; /* Billions mavi */
+  --card:#121624; --muted:#283044;
+  --text:#fff; --text-dim:#d6e3ff; --glow:rgba(123,199,255,.35)
 }
 html,body{margin:0;height:100%}
-
-/* Arkaplan: Billions mavi gradient (sade) */
 body{
   font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
-  color:var(--text);min-height:100svh;
+  color:var(--text);
   background:linear-gradient(180deg,var(--b-blue) 0%, var(--b-blue-dark) 100%);
-  display:flex;flex-direction:column;
+  min-height:100svh; display:flex; flex-direction:column;
 }
 
-/* Üst çubuk */
+/* top bar */
 .topbar{
   position:sticky; top:0; z-index:40;
-  display:flex;align-items:center;gap:12px;padding:10px 14px;
+  display:flex; align-items:center; gap:12px; padding:10px 14px;
   background:linear-gradient(to right,rgba(0,0,0,.15),rgba(0,0,0,.08));
   border-bottom:1px solid rgba(255,255,255,.12);
-  color:#fff; backdrop-filter: blur(6px)
+  backdrop-filter: blur(6px)
 }
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
-.logo{height:22px;opacity:.98;display:block}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700}
+.logo{height:22px; opacity:.98; display:block}
 .spacer{flex:1}
 
-/* Ekran sistemi */
-.screen{display:none;padding:16px}
+/* screens */
+.screen{display:none; padding:16px}
 .screen.active{display:block}
-.centerbox{display:grid;place-items:center;min-height:calc(100svh - 56px)}
+.centerbox{display:grid; place-items:center; min-height:calc(100svh - 56px)}
 
-/* Minimal Landing */
+/* landing minimal */
 .landing-simple{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
   gap:14px; padding:28px 14px; width:100%;
 }
-.logo.hero{height:clamp(100px,16vw,200px);display:block;filter: drop-shadow(0 10px 28px rgba(0,0,0,.35))}
-.logo.hero.xxl{height:clamp(160px,30vw,300px)} /* çok daha büyük logo */
+.logo.hero{height:clamp(100px,16vw,200px); display:block; filter: drop-shadow(0 10px 28px rgba(0,0,0,.35))}
+.logo.hero.xxl{height:clamp(160px,30vw,300px)}
 .logo.hero.smallgap{margin-bottom:6px}
 h1{margin:6px 0 4px; font-size:clamp(22px,6vw,36px)}
 .tagline{color:rgba(255,255,255,.92); font-size:clamp(14px,3.6vw,18px); margin-bottom:14px}
 
-/* Input & CTA */
 .label{display:block;margin:6px 0 4px}
 .input{
-  width:min(92vw,360px); padding:14px 14px; border-radius:14px;
-  border:none; outline:none; font-size:16px; margin:6px 0 12px;
-  background:rgba(0,0,0,.18); color:#fff;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
+  width:min(92vw,360px); padding:14px; border-radius:14px; border:none; outline:none;
+  background:rgba(0,0,0,.18); color:#fff; font-size:16px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18); margin-bottom:12px;
 }
 .btn{
   background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(0,0,0,.18));
-  border:1px solid rgba(255,255,255,.35);
-  color:#fff; padding:14px 18px; border-radius:14px; cursor:pointer;
+  border:1px solid rgba(255,255,255,.35); color:#fff;
+  padding:14px 18px; border-radius:14px; cursor:pointer;
   font-size:1.06rem; min-width:160px; transition:transform .06s ease, box-shadow .2s ease
 }
 .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,.25)}
@@ -67,7 +60,6 @@ h1{margin:6px 0 4px; font-size:clamp(22px,6vw,36px)}
 .btn.glow{box-shadow:0 0 22px var(--glow)}
 .start-btn{width:min(92vw,220px)}
 
-/* Özellik listesi */
 .highlights.simple{
   list-style:none; padding:0; margin:14px 0 0; display:grid; gap:6px;
   font-size:clamp(13px,3.4vw,16px); color:var(--text)
@@ -79,7 +71,7 @@ h1{margin:6px 0 4px; font-size:clamp(22px,6vw,36px)}
   backdrop-filter: blur(4px)
 }
 
-/* HUD + Game alanı (mobile-first) */
+/* HUD + Game (mobile-first) */
 .hud{display:flex;gap:8px;padding:8px 10px;align-items:center;justify-content:center;flex-wrap:wrap}
 .hud .hud-item{
   background:rgba(0,0,0,.18);
@@ -88,7 +80,7 @@ h1{margin:6px 0 4px; font-size:clamp(22px,6vw,36px)}
   padding:8px 10px;border-radius:12px;min-width:110px;text-align:center
 }
 
-/* Deck / Kartlar */
+/* Deck / Cards — stack görünüm (üst üste binmeyi güzelleştir) */
 .deck{
   position:relative; width:min(94vw,360px); height:min(140vw,520px);
   margin:14px auto; perspective:1000px
@@ -102,21 +94,30 @@ h1{margin:6px 0 4px; font-size:clamp(22px,6vw,36px)}
   border:1px solid rgba(255,255,255,.22);
   box-shadow:0 18px 50px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.12) inset;
   display:grid; place-items:center; touch-action:none; user-select:none;
-  transition: box-shadow .2s ease;
+  transform-origin:center; transition:box-shadow .2s ease; will-change:transform;
 }
-.card:hover{ box-shadow:0 22px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.16) inset }
 .card img{width:100%;height:100%;object-fit:cover}
 
-/* İpuçları ve butonlar */
+/* Stack efekti: sadece en üst kart tam boy; alttakiler küçülüp biraz aşağı iner */
+.deck .card{z-index:1}
+.deck .card:nth-last-child(1){transform:none; z-index:5}
+.deck .card:nth-last-child(2){transform:scale(.985) translateY(6px); z-index:4}
+.deck .card:nth-last-child(3){transform:scale(.97) translateY(12px); z-index:3}
+.deck .card:nth-last-child(4){transform:scale(.955) translateY(18px); z-index:2}
+.deck .card:nth-last-child(n+5){transform:scale(.94) translateY(24px); filter:brightness(.98)}
+
+/* Hints & actions */
 .hintbar{display:flex;justify-content:space-between;gap:10px;width:min(92vw,360px);margin:8px auto 0}
 .pill{padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);font-weight:700;letter-spacing:.2px;backdrop-filter: blur(4px); background:rgba(0,0,0,.18)}
 .pill.real{background:rgba(70,212,140,.22)} .pill.fake{background:rgba(255,107,107,.22)}
 .actions{display:flex;gap:14px;justify-content:center;margin-top:12px}
 
-/* Kredi */
-.credit{opacity:.9;margin-top:10px}
+/* credit — link beyaz */
+.credit{opacity:.95;margin-top:10px}
+.credit .credit-link{color:#fff; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.5)}
+.credit .credit-link:hover{opacity:.9}
 
-/* Küçük cihaz optimizasyonu */
+/* küçük cihaz */
 @media (max-width:380px){
   .btn{min-width:140px;padding:12px 14px;font-size:1rem}
   .hud .hud-item{min-width:100px}
