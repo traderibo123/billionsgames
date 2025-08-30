@@ -14,15 +14,30 @@ body{
   background:linear-gradient(to right,rgba(19,23,34,.7),rgba(19,23,34,.2));
   border-bottom:1px solid var(--muted)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
-.logo{height:22px;opacity:.95}
-.logo.hero{height:72px;margin-bottom:8px}
+
+/* header’daki küçük logo */
+.logo{height:22px;opacity:.95;display:block}
+
+/* girişteki büyük logo */
+.logo.hero{height:72px;margin-bottom:8px;display:block}
 .logo.hero.smallgap{margin-bottom:4px}
 .spacer{flex:1}
 
-/* ekranlar */
+/* ekran sistemi */
 .screen{display:none;padding:20px}
 .screen.active{display:block}
 .centerbox{display:grid;place-items:center;min-height:calc(100svh - 56px)}
+
+/* sol-üst köşe sabit logo */
+.corner-logo{
+  position:fixed;
+  top:10px;
+  left:10px;
+  height:28px;
+  z-index:50;
+  opacity:.95;
+  pointer-events:none;
+}
 
 .muted{color:var(--text-dim)}
 .small{font-size:.9rem}
@@ -34,7 +49,7 @@ body{
 .hud .hud-item{background:rgba(19,23,34,.6);border:1px solid var(--muted);
   padding:8px 12px;border-radius:10px;min-width:120px;text-align:center}
 
-/* PFP alanı küçültüldü */
+/* PFP alanı (küçültülmüş) */
 .deck{position:relative;width:min(90vw,320px);height:min(120vw,460px);
   margin:10px auto;perspective:1000px}
 .card{position:absolute;inset:0;border-radius:18px;overflow:hidden;
@@ -49,7 +64,7 @@ body{
 .pill.real{background:rgba(70,212,140,.15)}
 .pill.fake{background:rgba(255,107,107,.15)}
 
-/* daha büyük butonlar */
+/* büyük butonlar */
 .actions{display:flex;gap:18px;justify-content:center;margin-top:12px}
 .btn{background:#1b2130;border:1px solid var(--muted);color:var(--text);
   padding:16px 22px;border-radius:16px;cursor:pointer;
