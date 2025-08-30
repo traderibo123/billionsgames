@@ -13,14 +13,33 @@
   <link rel="dns-prefetch" href="https://unavatar.io">
   <link rel="preconnect" href="https://robohash.org" crossorigin>
   <link rel="dns-prefetch" href="https://robohash.org">
+  <style>
+    /* köşe logo üstte kalsın */
+    .corner-logo{
+      position:fixed; top:10px; left:10px; height:28px;
+      z-index:9999; opacity:.95; pointer-events:none;
+    }
+    /* header logosu */
+    .logo{height:22px; opacity:.95; display:block}
+    .logo.hero{height:72px; margin-bottom:8px; display:block}
+    .logo.hero.smallgap{margin-bottom:4px}
+    /* ekranlar */
+    .screen{display:none; padding:20px}
+    .screen.active{display:block}
+    .centerbox{display:grid; place-items:center; min-height:calc(100svh - 56px)}
+    /* temel üst bar (senin mevcut styles.css ile de uyumlu) */
+    body{background:radial-gradient(circle at 10% 10%, #101622 0%, #0a0b0f 60%); color:#e9eef7; margin:0}
+    .topbar{display:flex; align-items:center; gap:12px; padding:12px 16px;
+      background:linear-gradient(to right,rgba(19,23,34,.7),rgba(19,23,34,.2)); border-bottom:1px solid #2b3240}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
+    .spacer{flex:1}
+  </style>
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
       <!-- HEADER LOGO -->
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABbCAYAAABvVbWkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVR4nO3dMQ7CMAwF0MP+L3kSu2L8iRQnuwuDSZoih7LB6s3AzrYAAQIECBAgQIAAAQIECBAgQIAAAQJ+AbYPtwPe4XHrtRk7d36eOKz1EvBjG9YY+YyN+BEK8AJF8i7z0e4bJqZgDfwHDNwF/gyUJ6PvxlJw8gLwskAeSUh1f74nckpIAPrN8oJbTQ2Y2ag4wXwMQ0M4ElKcb1hKpWA0wXwnQO8DHq8nmc5fVEkgCc9sCdMWNQvYVQeeXAMzMORFeuMMhPAJ8Bh2T5AqYiQZyzcG8mhL4mtF6waHNB34DEf3DIL4BHvCN7NhHcAnr5XqSPzFkzQBvRUnq9BaBPHnNTcBxChYCHgzT9DSAjFoQk1jCM0W4HklQe4rY60ZzjvgCMh3A4mcEX3sgE/OuYkBKAbClpKqMWZCwB+kNwf0A7a2O5rMnn5cBaCDnV/FBBgQcVgv0AAdBie13MzMMCBCCkpYd4AgAABAgQIECBAgAABAgQIECBAgAABAv8BNxB+VgXGshsAAAAASUVORK5CYII="
-        alt="Billions" class="logo"/>
+      <img id="logoHeader" alt="Billions" class="logo"/>
       <span>Billions — Real vs Fake Swipe</span>
     </div>
     <div class="spacer"></div>
@@ -29,15 +48,10 @@
   <!-- START -->
   <section id="screen-start" class="screen active">
     <!-- SOL-ÜST SABİT LOGO -->
-    <img
-      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABbCAYAAABvVbWkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVR4nO3dMQ7CMAwF0MP+L3kSu2L8iRQnuwuDSZoih7LB6s3AzrYAAQIECBAgQIAAAQIECBAgQIAAAQJ+AbYPtwPe4XHrtRk7d36eOKz1EvBjG9YY+YyN+BEK8AJF8i7z0e4bJqZgDfwHDNwF/gyUJ6PvxlJw8gLwskAeSUh1f74nckpIAPrN8oJbTQ2Y2ag4wXwMQ0M4ElKcb1hKpWA0wXwnQO8DHq8nmc5fVEkgCc9sCdMWNQvYVQeeXAMzMORFeuMMhPAJ8Bh2T5AqYiQZyzcG8mhL4mtF6waHNB34DEf3DIL4BHvCN7NhHcAnr5XqSPzFkzQBvRUnq9BaBPHnNTcBxChYCHgzT9DSAjFoQk1jCM0W4HklQe4rY60ZzjvgCMh3A4mcEX3sgE/OuYkBKAbClpKqMWZCwB+kNwf0A7a2O5rMnn5cBaCDnV/FBBgQcVgv0AAdBie13MzMMCBCCkpYd4AgAABAgQIECBAgAABAgQIECBAgAABAv8BNxB+VgXGshsAAAAASUVORK5CYII="
-      alt="Billions" class="corner-logo">
-
+    <img id="logoCorner" alt="Billions" class="corner-logo">
     <div class="centerbox">
       <!-- GİRİŞTEKİ BÜYÜK LOGO -->
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABbCAYAAABvVbWkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVR4nO3dMQ7CMAwF0MP+L3kSu2L8iRQnuwuDSZoih7LB6s3AzrYAAQIECBAgQIAAAQIECBAgQIAAAQJ+AbYPtwPe4XHrtRk7d36eOKz1EvBjG9YY+YyN+BEK8AJF8i7z0e4bJqZgDfwHDNwF/gyUJ6PvxlJw8gLwskAeSUh1f74nckpIAPrN8oJbTQ2Y2ag4wXwMQ0M4ElKcb1hKpWA0wXwnQO8DHq8nmc5fVEkgCc9sCdMWNQvYVQeeXAMzMORFeuMMhPAJ8Bh2T5AqYiQZyzcG8mhL4mtF6waHNB34DEf3DIL4BHvCN7NhHcAnr5XqSPzFkzQBvRUnq9BaBPHnNTcBxChYCHgzT9DSAjFoQk1jCM0W4HklQe4rY60ZzjvgCMh3A4mcEX3sgE/OuYkBKAbClpKqMWZCwB+kNwf0A7a2O5rMnn5cBaCDnV/FBBgQcVgv0AAdBie13MzMMCBCCkpYd4AgAABAgQIECBAgAABAgQIECBAgAABAv8BNxB+VgXGshsAAAAASUVORK5CYII="
-        alt="Billions" class="logo hero"/>
+      <img id="logoHero" alt="Billions" class="logo hero"/>
       <h1>Real vs Fake Swipe</h1>
 
       <label for="nickname" class="label">Nickname</label>
@@ -77,10 +91,7 @@
   <!-- END -->
   <section id="screen-end" class="screen">
     <div class="centerbox">
-      <!-- BİTİŞTE LOGO -->
-      <img
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABbCAYAAABvVbWkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVR4nO3dMQ7CMAwF0MP+L3kSu2L8iRQnuwuDSZoih7LB6s3AzrYAAQIECBAgQIAAAQIECBAgQIAAAQJ+AbYPtwPe4XHrtRk7d36eOKz1EvBjG9YY+YyN+BEK8AJF8i7z0e4bJqZgDfwHDNwF/gyUJ6PvxlJw8gLwskAeSUh1f74nckpIAPrN8oJbTQ2Y2ag4wXwMQ0M4ElKcb1hKpWA0wXwnQO8DHq8nmc5fVEkgCc9sCdMWNQvYVQeeXAMzMORFeuMMhPAJ8Bh2T5AqYiQZyzcG8mhL4mtF6waHNB34DEf3DIL4BHvCN7NhHcAnr5XqSPzFkzQBvRUnq9BaBPHnNTcBxChYCHgzT9DSAjFoQk1jCM0W4HklQe4rY60ZzjvgCMh3A4mcEX3sgE/OuYkBKAbClpKqMWZCwB+kNwf0A7a2O5rMnn5cBaCDnV/FBBgQcVgv0AAdBie13MzMMCBCCkpYd4AgAABAgQIECBAgAABAgQIECBAgAABAv8BNxB+VgXGshsAAAAASUVORK5CYII="
-        alt="Billions" class="logo hero smallgap"/>
+      <img id="logoEnd" alt="Billions" class="logo hero smallgap"/>
       <h2>Game Over</h2>
       <p><b id="finalName">Player</b>, your score is <b id="finalScore">0</b> with <b id="accuracy">0%</b> accuracy.</p>
       <a id="shareX" class="btn" target="_blank" rel="noopener">Share on X</a>
@@ -88,6 +99,38 @@
       <p class="credit">Produced by <a href="https://x.com/traderibo123" target="_blank">@traderibo123</a></p>
     </div>
   </section>
+
+  <script>
+    // INLINE BASE64 (küçük dosya, güvenli yedek)
+    const BILLIONS_LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABbCAYAAABvVbWkAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVR4nO3dMQ7CMAwF0MP+L3kSu2L8iRQnuwuDSZoih7LB6s3AzrYAAQIECBAgQIAAAQIECBAgQIAAAQJ+AbYPtwPe4XHrtRk7d36eOKz1EvBjG9YY+YyN+BEK8AJF8i7z0e4bJqZgDfwHDNwF/gyUJ6PvxlJw8gLwskAeSUh1f74nckpIAPrN8oJbTQ2Y2ag4wXwMQ0M4ElKcb1hKpWA0wXwnQO8DHq8nmc5fVEkgCc9sCdMWNQvYVQeeXAMzMORFeuMMhPAJ8Bh2T5AqYiQZyzcG8mhL4mtF6waHNB34DEf3DIL4BHvCN7NhHcAnr5XqSPzFkzQBvRUnq9BaBPHnNTcBxChYCHgzT9DSAjFoQk1jCM0W4HklQe4rY60ZzjvgCMh3A4mcEX3sgE/OuYkBKAbClpKqMWZCwB+kNwf0A7a2O5rMnn5cBaCDnV/FBBgQcVgv0AAdBie13MzMMCBCCkpYd4AgAABAgQIECBAgAABAgQIECBAgAABAv8BNxB+VgXGshsAAAAASUVORK5CYII=";
+
+    // Bir elemana logo ata: sırayla path dene, olmadı base64'e düş
+    function applyLogo(imgEl, variants) {
+      if (!imgEl) return;
+      const tryNext = (i) => {
+        if (i >= variants.length) { imgEl.src = BILLIONS_LOGO_B64; return; }
+        const test = new Image();
+        test.onload = () => { imgEl.src = variants[i]; };
+        test.onerror = () => tryNext(i+1);
+        test.src = variants[i];
+      };
+      tryNext(0);
+    }
+
+    // Kullanacağımız yol varyantları (küçük-büyük harf + alternatif dosya)
+    const logoPaths = [
+      "./assets/billions-logo.png?v=3_9",
+      "./assets/Billions-logo.png?v=3_9",
+      "./assets/billions_ntwk.png?v=3_9",
+      BILLIONS_LOGO_B64
+    ];
+
+    // Uygula (header, corner, hero, end)
+    applyLogo(document.getElementById("logoHeader"), logoPaths);
+    applyLogo(document.getElementById("logoCorner"), logoPaths);
+    applyLogo(document.getElementById("logoHero"),   logoPaths);
+    applyLogo(document.getElementById("logoEnd"),    logoPaths);
+  </script>
 
   <script src="share.js"></script>
   <script src="main.js"></script>
