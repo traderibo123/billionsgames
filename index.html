@@ -17,8 +17,10 @@
 <body>
   <header class="topbar">
     <div class="brand">
-      <!-- header logosu -->
-      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo"/>
+      <!-- HEADER LOGO (inline base64) -->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI...<SNIP>...AAElFTkSuQmCC"
+        alt="Billions" class="logo"/>
       <span>Billions — Real vs Fake Swipe</span>
     </div>
     <div class="spacer"></div>
@@ -26,11 +28,15 @@
 
   <!-- START -->
   <section id="screen-start" class="screen active">
-    <!-- sol-üst köşe logosu (sabit) -->
-    <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="corner-logo">
+    <!-- SOL-ÜST SABİT LOGO (inline base64) -->
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI...<SNIP>...AAElFTkSuQmCC"
+      alt="Billions" class="corner-logo">
     <div class="centerbox">
-      <!-- girişte büyük logo -->
-      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo hero"/>
+      <!-- GİRİŞTEKİ BÜYÜK LOGO (inline base64) -->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI...<SNIP>...AAElFTkSuQmCC"
+        alt="Billions" class="logo hero"/>
       <h1>Real vs Fake Swipe</h1>
 
       <label for="nickname" class="label">Nickname</label>
@@ -38,7 +44,6 @@
 
       <div class="row">
         <button id="startBtn" class="btn primary">Start</button>
-        <!-- Diagnostics / Run Demo girişten kaldırıldı -->
       </div>
 
       <div id="errorBox" class="muted small" style="display:none;margin-top:8px;"></div>
@@ -71,7 +76,10 @@
   <!-- END -->
   <section id="screen-end" class="screen">
     <div class="centerbox">
-      <img src="./assets/billions-logo.png?v=3_8" alt="Billions" class="logo hero smallgap"/>
+      <!-- BİTİŞTE LOGO (inline base64) -->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI...<SNIP>...AAElFTkSuQmCC"
+        alt="Billions" class="logo hero smallgap"/>
       <h2>Game Over</h2>
       <p><b id="finalName">Player</b>, your score is <b id="finalScore">0</b> with <b id="accuracy">0%</b> accuracy.</p>
       <a id="shareX" class="btn" target="_blank" rel="noopener">Share on X</a>
@@ -83,7 +91,6 @@
   <script src="share.js"></script>
   <script src="main.js"></script>
   <script>
-    // SW kaydı (relative path)
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js').catch(()=>{});
     }
